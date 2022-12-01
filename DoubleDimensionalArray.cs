@@ -31,7 +31,7 @@ namespace Udemy
                     Console.WriteLine("Cell is already occupied");
                 }
             }
-            catch (IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException)
             {
                 Console.WriteLine("Invalid index for 2D array");
             }
@@ -86,7 +86,7 @@ namespace Udemy
                 Console.WriteLine("Successfully deleted");
                 arr2[row, col] = Int32.MinValue;
             }
-            catch (IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException)
             {
                 Console.WriteLine("Index is invalid for this array");
             }

@@ -31,7 +31,7 @@ namespace Udemy
                     Console.WriteLine("This cell is already occupied");
                 }
             }
-            catch (IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException)
             {
                 Console.WriteLine("Index out of range");
             }
@@ -47,7 +47,7 @@ namespace Udemy
                     Console.WriteLine(arr[i]);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Array no longer exists!!");
             }
@@ -75,7 +75,7 @@ namespace Udemy
                 arr[indexToBeDeleted] = Int32.MinValue;
                 Console.WriteLine("Value deleted successfully");
             }
-            catch (IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException)
             {
                 Console.WriteLine("Index out of range");
             }
