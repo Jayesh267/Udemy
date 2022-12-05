@@ -6,6 +6,7 @@ namespace Udemy
         public Node head;
         Node tail;
         int size;
+        //Create Single node in linked list
         public Node createSinglylinkedList(int nodeValue)
         {
             head = new Node();
@@ -16,6 +17,41 @@ namespace Udemy
             tail = node;
             size = 1;
             return head;
+        }
+
+        //Insert method in SinglyLinkedList
+        public void insertInLinkedList(int nodeValue, int location)
+        {
+            Node node = new Node();
+            node.value = nodeValue;
+            if (head == null)
+            {
+                createSinglylinkedList(nodeValue);
+            }
+            else if (location == 0)
+            {
+                node.next = head;
+                head = node;
+            }
+            else if (location >= size)
+            {
+                tail.next = node;
+                tail = node;
+                node.next = null;
+            }
+            else
+            {
+                Node tempNode = head;
+                int index = 0;
+                while (location < index)
+                {
+                    tempNode = tempNode.next;
+                    index++;
+                }
+                node.next = tempNode.next;
+                tempNode.next = node;                
+            }
+            size++;
         }
     }
 }
