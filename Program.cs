@@ -60,10 +60,13 @@ namespace Udemy
 
             SinglyLinkedList sll = new SinglyLinkedList();
             sll.createSinglylinkedList(5);
-            Console.WriteLine(sll.head.value);
+            //Console.WriteLine(sll.head.value);
             sll.insertInLinkedList(6, 1);
             sll.insertInLinkedList(7,3);
-            Console.WriteLine(sll.head.next.next.value);
+            sll.insertInLinkedList(8,2);
+            sll.insertInLinkedList(9,0);
+            //Console.WriteLine(sll.head.next.next.value);
+            sll.traverseSingleLinkedList();
         }
 
         //Recursive method to find factorial

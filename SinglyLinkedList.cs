@@ -53,5 +53,28 @@ namespace Udemy
             }
             size++;
         }
+
+        //Traversal of Single Linked List
+        public void traverseSingleLinkedList()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Single Linked List does not exist");
+            }
+            else
+            {
+                Node tempNode = head;
+                for (int i=0; i<size; i++)
+                {
+                    Console.Write(tempNode.value);
+                    if (i!=(size-1))
+                    {
+                        Console.Write("->");
+                    }
+                    tempNode = tempNode.next;
+                }
+                Console.WriteLine("\n");               
+            }
+        }
     }
 }
