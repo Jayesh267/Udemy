@@ -67,6 +67,13 @@ namespace Udemy
             sll.insertInLinkedList(9,0);
             //Console.WriteLine(sll.head.next.next.value);
             sll.traverseSingleLinkedList();
+
+            sll.searchNode(7);
+
+            sll.deleteNode(2);
+            sll.traverseSingleLinkedList();
+            sll.deleteSLL();
+            sll.traverseSingleLinkedList();            
         }
 
         //Recursive method to find factorial
