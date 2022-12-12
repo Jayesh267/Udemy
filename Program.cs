@@ -58,22 +58,32 @@ namespace Udemy
 
             // //Let's see if this works again...
 
-            SinglyLinkedList sll = new SinglyLinkedList();
-            sll.createSinglylinkedList(5);
-            //Console.WriteLine(sll.head.value);
-            sll.insertInLinkedList(6, 1);
-            sll.insertInLinkedList(7,3);
-            sll.insertInLinkedList(8,2);
-            sll.insertInLinkedList(9,0);
-            //Console.WriteLine(sll.head.next.next.value);
-            sll.traverseSingleLinkedList();
+            // SinglyLinkedList sll = new SinglyLinkedList();
+            // sll.createSinglylinkedList(5);
+            // //Console.WriteLine(sll.head.value);
+            // sll.insertInLinkedList(6, 1);
+            // sll.insertInLinkedList(7,3);
+            // sll.insertInLinkedList(8,2);
+            // sll.insertInLinkedList(9,0);
+            // //Console.WriteLine(sll.head.next.next.value);
+            // sll.traverseSingleLinkedList();
 
-            sll.searchNode(7);
+            // sll.searchNode(7);
 
-            sll.deleteNode(2);
-            sll.traverseSingleLinkedList();
-            sll.deleteSLL();
-            sll.traverseSingleLinkedList();            
+            // sll.deleteNode(2);
+            // sll.traverseSingleLinkedList();
+            // sll.deleteSLL();
+            // sll.traverseSingleLinkedList();
+
+            CircularSLL csll = new CircularSLL();
+            csll.createCircularSLL(5);
+            csll.insertCircularSLL(0,4);
+            csll.insertCircularSLL(1,6);
+            csll.insertCircularSLL(8,7);
+            csll.insertCircularSLL(9,3);
+            csll.insertCircularSLL(3,10);
+            //Console.WriteLine(csll.head.value);
+            csll.traverseCircularSLL();
         }
 
         //Recursive method to find factorial
