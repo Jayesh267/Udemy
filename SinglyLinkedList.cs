@@ -76,5 +76,80 @@ namespace Udemy
                 Console.WriteLine("\n");               
             }
         }
+
+        //Search node in Singly Linked List
+        public Boolean searchNode (int nodeValue)
+        {
+            Node tempNode = head;
+            for (int i=0; i<size; i++)
+            {
+                if (head != null)
+                {
+                    if (tempNode.value == nodeValue)
+                    {
+                        Console.WriteLine("Found node at location: " + i);
+                        return true;
+                    }
+                    tempNode = tempNode.next;
+                }
+            }
+            Console.WriteLine("Node not found");
+            return false;
+        }
+
+        //Delete node from Singly Linked List
+        public void deleteNode (int location)
+        {
+            if (head != null)
+            {
+                Node tempNode = head;
+                if (size == 1)
+                {
+                    head = null;
+                    tail = null;
+                    size--;
+                }
+                else if (location == 0)
+                {
+                    head = tempNode.next;
+                    size--;
+                }
+                else if (location >= size)
+                {
+                    int index = 0;
+                    while (index < (size - 1))
+                    {
+                        index++;
+                        tempNode = tempNode.next;
+                    }
+                    tempNode.next = null;
+                    tail = tempNode;
+                    size--;
+                }
+                else
+                {
+                    int index = 0;
+                    while (index < (location-1))
+                    {
+                        index++;
+                        tempNode = tempNode.next;
+                    }
+                    tempNode.next = tempNode.next.next;                    
+                    size--;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Node does not exists");
+            }
+        }
+
+        //Delete entire singly linked list
+        public void deleteSLL()
+        {
+            head = null;
+            tail = null;
+            Console.WriteLine("Deleted SLL successfully");
+        }
     }
 }
