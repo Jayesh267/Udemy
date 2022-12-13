@@ -4,7 +4,7 @@ namespace Udemy
 {
     public class DoublyNode
     {
-        public int size;
+        public int value;
         public DoublyNode next;
         public DoublyNode prev;
     }
