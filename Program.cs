@@ -84,6 +84,11 @@ namespace Udemy
             csll.insertCircularSLL(3,10);
             //Console.WriteLine(csll.head.value);
             csll.traverseCircularSLL();
+            //csll.searchCircularSLL(100);
+            csll.deleteNodeFromCircularSSL(3);
+            csll.traverseCircularSLL();
+            csll.deleteEntireCircularSLL();
+            csll.traverseCircularSLL();
         }
 
         //Recursive method to find factorial

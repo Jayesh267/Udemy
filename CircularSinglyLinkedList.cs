@@ -76,7 +76,99 @@ namespace Udemy
             }
             else
             {
-                Console.WriteLine("Circular SLL does not exists");
+                Console.WriteLine("Circular SLL does not exist");
+                return;
+            }
+            Console.WriteLine("");
+        }
+
+        public Boolean searchCircularSLL(int nodeValue)
+        {
+            Node tempNode = head;
+            if (head == null)
+            {
+                Console.WriteLine("Circular SLL does not exist");
+                return false;
+            }
+
+            for (int i=0; i<size; i++)
+            {
+                if (tempNode.value == nodeValue)
+                {
+                    Console.WriteLine("Node found at location: " + i);
+                    return true;
+                }
+                tempNode = tempNode.next;
+            }
+            Console.WriteLine("Node cannot be found");
+            return false;
+        }
+
+        public void deleteNodeFromCircularSSL(int location)
+        {
+            if (head != null)
+            {
+                if (location == 0 && size == 1)
+                {
+                    head.next = null;
+                    head = null;
+                    tail = null;
+                    size--;
+                }
+                else if (location == 0 && size > 1)
+                {
+                    head = head.next;
+                    tail.next = head;
+                    size--;
+                }
+                else if (location >= size && size == 1)
+                {
+                    head.next = null;
+                    head = null;
+                    tail = null;
+                    size--;
+                }
+                else if (location >= size && size > 1)
+                {
+                    Node tempNode = head;
+                    for (int i=0; i<size-1; i++)
+                    {
+                        tempNode = tempNode.next;
+                    }
+                    tail = tempNode;
+                    tempNode.next = head;
+                    size--;
+                }
+                else
+                {
+                    Node tempNode = head;
+                    for (int i=0; i<location-1; i++)
+                    {
+                        tempNode = tempNode.next;
+                    }
+                    tempNode.next = tempNode.next.next;
+                    size--;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Cicular SLL does not exist");
+                return;
+            }
+        }
+
+        public void deleteEntireCircularSLL()
+        {
+            if (head != null)
+            {
+                head = null;
+                tail.next = null;
+                tail = null;
+                Console.WriteLine("Circular SLL has been deleted successfully");
+            }
+            else
+            {
+                Console.WriteLine("Circular SLL does not exist");
                 return;
             }
         }
