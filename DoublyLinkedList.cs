@@ -60,5 +60,28 @@ namespace Udemy
                 return;
             }
         }
+
+        public void traverseDLL()
+        {
+            if (head != null)
+            {
+                DoublyNode newNode = head;
+                for (int i=0; i<size; i++)
+                {
+                    Console.Write(newNode.value);
+                    newNode = newNode.next;
+                    if (i<size-1)
+                    {
+                        Console.Write(" -> ");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Node does not exists");
+                return;
+            }
+            Console.WriteLine();
+        }
     }
 }

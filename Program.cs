@@ -92,7 +92,10 @@ namespace Udemy
 
             DoublyLinkedList dll = new DoublyLinkedList();
             dll.createDoublyLinkedList(1);
-            Console.WriteLine(dll.head.value);
+            dll.insertNodeInDLL(0,2);
+            dll.insertNodeInDLL(1,3);
+            dll.insertNodeInDLL(7,3);
+            Console.WriteLine(dll.tail.value);
         }
 
         //Recursive method to find factorial
