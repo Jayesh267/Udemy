@@ -81,7 +81,7 @@ namespace Udemy
             }
             Console.WriteLine("");
         }
-                Console.WriteLine("Circular SLL does not exists");
+
         public Boolean searchCircularSLL(int nodeValue)
         {
             Node tempNode = head;
