@@ -19,5 +19,46 @@ namespace Udemy
             size = 1;
             return head;
         }
+
+        public void insertNodeInDLL(int location, int nodeValue)
+        {
+            if (head != null)
+            {
+                DoublyNode newNode = new DoublyNode();
+                newNode.value = nodeValue;
+                if (location == 0)
+                {
+                    newNode.next = head;
+                    newNode.prev = null;
+                    head.prev = newNode;
+                    head = newNode;                    
+                }
+                else if (location >= size)
+                {
+                    tail.next = newNode;
+                    newNode.prev = tail;
+                    newNode.next = null;
+                    tail = newNode;
+                }
+                else
+                {
+                    DoublyNode tempNode = head;
+                    for (int i=0; i<location-1; i++)
+                    {
+                        tempNode = tempNode.next;
+                    }
+                    newNode.next = tempNode.next;
+                    tempNode.next = newNode;
+                    newNode.next.prev = newNode;
+                    newNode.prev = tempNode;
+                }
+                size++; 
+            }
+            else
+            {
+                createDoublyLinkedList(nodeValue);
+                return;
+            }
+        }
     }
 }
