@@ -130,5 +130,71 @@ namespace Udemy
                 return false;
             }
         }
+
+        public void deleteNodeInDLL(int location)
+        {
+            if (head != null)
+            {
+                if (location == 0)
+                {
+                    if (size == 1)
+                    {
+                        head = null;
+                        tail = null;
+                    }
+                    else
+                    {
+                        head = head.next;
+                        head.prev = null;
+                    }
+                }
+                else if (location >= size)
+                {
+                    if (size == 1)
+                    {
+                        head = null;
+                        tail = null;
+                    }
+                    else
+                    {
+                        tail = tail.prev;
+                        tail.next = null;
+                    }
+                }
+                else
+                {
+                    DoublyNode currentNode = head;
+                    for (int i=0; i<location-1; i++)
+                    {
+                        currentNode = currentNode.next;
+                    }
+                    currentNode.next = currentNode.next.next;
+                    currentNode.next.prev = currentNode;
+                }
+                size--;
+            }
+            else
+            {
+                Console.WriteLine("DLL does not exists");
+                return;
+            }
+        }
+
+        public void deleteDLL()
+        {
+            if (head != null)
+            {
+                DoublyNode currentNode = head;
+                for (int i=0; i<size; i++)
+                {
+                    currentNode.prev = null;
+                    currentNode = currentNode.next;
+                }
+                head = null;
+                tail = null;
+                Console.WriteLine("Entire DLL is deleted successfully");
+
+            }
+        }
     }
 }
