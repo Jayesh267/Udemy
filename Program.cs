@@ -94,8 +94,11 @@ namespace Udemy
             dll.createDoublyLinkedList(1);
             dll.insertNodeInDLL(0,2);
             dll.insertNodeInDLL(1,3);
-            dll.insertNodeInDLL(7,3);
-            Console.WriteLine(dll.tail.value);
+            dll.insertNodeInDLL(7,4);
+            //Console.WriteLine(dll.tail.value);
+            dll.searchInDLL(14);
+            dll.traverseDLL();
+            dll.reverseTraverseDLL();
         }
 
         //Recursive method to find factorial

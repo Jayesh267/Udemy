@@ -78,10 +78,57 @@ namespace Udemy
             }
             else
             {
-                Console.WriteLine("Node does not exists");
+                Console.WriteLine("DLL does not exists");
                 return;
             }
             Console.WriteLine();
+        }
+
+        public void reverseTraverseDLL()
+        {
+            if (head != null)
+            {
+                DoublyNode tempNode = tail;
+                for (int i=0; i<size; i++)
+                {
+                    Console.Write(tempNode.value);
+                    tempNode = tempNode.prev;
+                    if (i <size-1)
+                    {
+                        Console.Write(" <- ");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("DLL does not exists");
+                return;
+            }
+            Console.WriteLine();
+        }
+
+        public Boolean searchInDLL(int nodeValue)
+        {
+            if (head != null)
+            {
+                DoublyNode currentNode = head;
+                for (int i=0; i<size; i++)
+                {
+                    if (currentNode.value == nodeValue)
+                    {
+                        Console.WriteLine("Node found in DLL at location: " + i);
+                        return true;
+                    }
+                    currentNode = currentNode.next;
+                }
+                Console.WriteLine("Node not found in DLL");
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("DLL does not exists");
+                return false;
+            }
         }
     }
 }
