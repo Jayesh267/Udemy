@@ -111,8 +111,12 @@ namespace Udemy
             cdll.insertInCDLL(5,4);
             //Console.WriteLine(cdll.head.next.value);
             cdll.traverseCDLL();
-            cdll.reverseTraverseCDLL();
+            //cdll.reverseTraverseCDLL();
             cdll.searchInCDLL(40);
+            cdll.deleteNodeInDLL(2);
+            cdll.traverseCDLL();
+            cdll.deleteCDLL();
+            cdll.traverseCDLL();
         }
 
         //Recursive method to find factorial

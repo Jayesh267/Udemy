@@ -132,5 +132,82 @@ namespace Udemy
             Console.WriteLine("Node not found in CDLL");
             return false;
         }
+
+        public void deleteNodeInDLL(int location)
+        {
+            if (head != null)
+            {
+                if (location == 0)
+                {
+                    if (size == 1)
+                    {
+                        head.next = null;
+                        head.prev = null;
+                        head = null;
+                        tail = null;
+                    }
+                    else
+                    {
+                        head.next.prev = tail;
+                        tail.next = tail.next.next;
+                        head = head.next;
+                    }
+                }
+                else if (location > size)
+                {
+                    if (size == 1)
+                    {
+                        head.next = null;
+                        head.prev = null;
+                        head = null;
+                        tail = null;
+                    }
+                    else
+                    {
+                        tail.prev.next = head;
+                        head.prev = tail.prev;
+                        tail = tail.prev;
+                    }
+                }
+                else
+                {
+                    DoublyNode currentNode = head;
+                    for (int i=0; i<location-1; i++)
+                    {
+                        currentNode = currentNode.next;
+                    }
+                    currentNode.next = currentNode.next.next;
+                    currentNode.next.prev = currentNode;
+                }
+                size--;
+            }
+            else
+            {
+                Console.WriteLine("Circular DLL does not exist...");
+                return; 
+            }
+        }
+
+        public void deleteCDLL()
+        {
+            if (head != null)
+            {
+                DoublyNode currentNode = head;
+                tail.next = null;
+                head = null;
+                tail = null;
+                for(int i=0; i<size; i++)
+                {
+                    currentNode.prev = null;
+                    currentNode = currentNode.next;
+                }
+                Console.WriteLine("Circular DLL successfully deleted");
+            }
+            else
+            {
+                Console.WriteLine("Circular DLL does not exist...");
+                return; 
+            }
+        }
     }
 }
