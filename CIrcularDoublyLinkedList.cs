@@ -2,42 +2,43 @@ using System;
 
 namespace Udemy
 {
-    public class DoublyLinkedList
+    public class CircularDoublyLinkedList
     {
         public DoublyNode head;
         public DoublyNode tail;
-        int size;
-
-        public DoublyNode createDoublyLinkedList(int nodeValue)
+        public int size;
+        public DoublyNode createNodeInCDLL(int nodeValue)
         {
-            DoublyNode doublyNode = new DoublyNode();
-            doublyNode.next = null;
-            doublyNode.prev = null;
-            doublyNode.value = nodeValue;
-            head = doublyNode;
-            tail = doublyNode;
+            DoublyNode newNode = new DoublyNode();
+            newNode.value = nodeValue;
+            head = newNode;
+            tail = newNode;
             size = 1;
+            newNode.next = newNode;
+            newNode.prev = newNode;
             return head;
         }
 
-        public void insertNodeInDLL(int location, int nodeValue)
+        public void insertInCDLL(int location, int nodeValue)
         {
             if (head != null)
             {
                 DoublyNode newNode = new DoublyNode();
                 newNode.value = nodeValue;
-                if (location == 0)
+                if(location == 0)
                 {
                     newNode.next = head;
-                    newNode.prev = null;
+                    newNode.prev = head.prev;
                     head.prev = newNode;
-                    head = newNode;                    
+                    tail.next = newNode;
+                    head = newNode;
                 }
                 else if (location >= size)
                 {
-                    tail.next = newNode;
                     newNode.prev = tail;
-                    newNode.next = null;
+                    newNode.next = head;
+                    tail.next.prev = newNode;
+                    tail.next = newNode;
                     tail = newNode;
                 }
                 else
@@ -48,66 +49,67 @@ namespace Udemy
                         tempNode = tempNode.next;
                     }
                     newNode.next = tempNode.next;
-                    tempNode.next = newNode;
-                    newNode.next.prev = newNode;
                     newNode.prev = tempNode;
+                    tempNode.next.prev = newNode;
+                    tempNode.next = newNode;
                 }
-                size++; 
+                size++;
+
             }
             else
             {
-                createDoublyLinkedList(nodeValue);
+                createNodeInCDLL(nodeValue);
                 return;
             }
         }
 
-        public void traverseDLL()
+        public void traverseCDLL()
         {
             if (head != null)
             {
-                DoublyNode newNode = head;
+                DoublyNode currentNode = head;
                 for (int i=0; i<size; i++)
                 {
-                    Console.Write(newNode.value);
-                    newNode = newNode.next;
-                    if (i<size-1)
+                    Console.Write(currentNode.value);
+                    currentNode = currentNode.next;
+                    if (i != size-1)
                     {
                         Console.Write(" -> ");
                     }
                 }
+                Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("DLL does not exists");
+                Console.WriteLine("Circular DLL does not exist...");
                 return;
             }
-            Console.WriteLine();
         }
 
-        public void reverseTraverseDLL()
+        public void reverseTraverseCDLL()
         {
             if (head != null)
             {
-                DoublyNode tempNode = tail;
+                DoublyNode currentNode = tail;
                 for (int i=0; i<size; i++)
                 {
-                    Console.Write(tempNode.value);
-                    tempNode = tempNode.prev;
-                    if (i <size-1)
+                    Console.Write(currentNode.value);
+                    if (i < size-1)
                     {
                         Console.Write(" <- ");
                     }
+                    currentNode = currentNode.prev;
                 }
+                Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("DLL does not exists");
-                return;
+                Console.WriteLine("Circular DLL does not exist...");
+                return;   
             }
-            Console.WriteLine();
         }
 
-        public Boolean searchInDLL(int nodeValue)
+        public Boolean searchInCDLL(int nodeValue)
         {
             if (head != null)
             {
@@ -116,19 +118,19 @@ namespace Udemy
                 {
                     if (currentNode.value == nodeValue)
                     {
-                        Console.WriteLine("Node found in DLL at location: " + i);
+                        Console.WriteLine("Node found in CDLL at location: " + i);
                         return true;
                     }
                     currentNode = currentNode.next;
                 }
-                Console.WriteLine("Node not found in DLL");
-                return false;
             }
             else
             {
-                Console.WriteLine("DLL does not exists");
-                return false;
+                Console.WriteLine("Circular DLL does not exist...");
+                return false; 
             }
+            Console.WriteLine("Node not found in CDLL");
+            return false;
         }
 
         public void deleteNodeInDLL(int location)
@@ -139,26 +141,32 @@ namespace Udemy
                 {
                     if (size == 1)
                     {
+                        head.next = null;
+                        head.prev = null;
                         head = null;
                         tail = null;
                     }
                     else
                     {
+                        head.next.prev = tail;
+                        tail.next = tail.next.next;
                         head = head.next;
-                        head.prev = null;
                     }
                 }
-                else if (location >= size)
+                else if (location > size)
                 {
                     if (size == 1)
                     {
+                        head.next = null;
+                        head.prev = null;
                         head = null;
                         tail = null;
                     }
                     else
                     {
+                        tail.prev.next = head;
+                        head.prev = tail.prev;
                         tail = tail.prev;
-                        tail.next = null;
                     }
                 }
                 else
@@ -175,25 +183,30 @@ namespace Udemy
             }
             else
             {
-                Console.WriteLine("DLL does not exists");
-                return;
+                Console.WriteLine("Circular DLL does not exist...");
+                return; 
             }
         }
 
-        public void deleteDLL()
+        public void deleteCDLL()
         {
             if (head != null)
             {
                 DoublyNode currentNode = head;
-                for (int i=0; i<size; i++)
+                tail.next = null;
+                head = null;
+                tail = null;
+                for(int i=0; i<size; i++)
                 {
                     currentNode.prev = null;
                     currentNode = currentNode.next;
                 }
-                head = null;
-                tail = null;
-                Console.WriteLine("Entire DLL is deleted successfully");
-
+                Console.WriteLine("Circular DLL successfully deleted");
+            }
+            else
+            {
+                Console.WriteLine("Circular DLL does not exist...");
+                return; 
             }
         }
     }

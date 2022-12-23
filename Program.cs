@@ -90,9 +90,33 @@ namespace Udemy
             // csll.deleteEntireCircularSLL();
             // csll.traverseCircularSLL();
 
-            DoublyLinkedList dll = new DoublyLinkedList();
-            dll.createDoublyLinkedList(1);
-            Console.WriteLine(dll.head.value);
+            // DoublyLinkedList dll = new DoublyLinkedList();
+            // dll.createDoublyLinkedList(1);
+            // dll.insertNodeInDLL(0,2);
+            // dll.insertNodeInDLL(1,3);
+            // dll.insertNodeInDLL(7,4);
+            // //Console.WriteLine(dll.tail.value);
+            // dll.searchInDLL(14);
+            // dll.traverseDLL();
+            // //dll.reverseTraverseDLL();
+            // dll.deleteNodeInDLL(1);
+            // dll.traverseDLL();
+            // dll.deleteDLL();
+            // dll.traverseDLL();
+
+            CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
+            cdll.createNodeInCDLL(1);
+            cdll.insertInCDLL(0,2);
+            cdll.insertInCDLL(2,3);
+            cdll.insertInCDLL(5,4);
+            //Console.WriteLine(cdll.head.next.value);
+            cdll.traverseCDLL();
+            //cdll.reverseTraverseCDLL();
+            cdll.searchInCDLL(40);
+            cdll.deleteNodeInDLL(2);
+            cdll.traverseCDLL();
+            cdll.deleteCDLL();
+            cdll.traverseCDLL();
         }
 
         //Recursive method to find factorial
