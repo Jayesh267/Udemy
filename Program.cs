@@ -104,19 +104,30 @@ namespace Udemy
             // dll.deleteDLL();
             // dll.traverseDLL();
 
-            CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
-            cdll.createNodeInCDLL(1);
-            cdll.insertInCDLL(0,2);
-            cdll.insertInCDLL(2,3);
-            cdll.insertInCDLL(5,4);
-            //Console.WriteLine(cdll.head.next.value);
-            cdll.traverseCDLL();
-            //cdll.reverseTraverseCDLL();
-            cdll.searchInCDLL(40);
-            cdll.deleteNodeInDLL(2);
-            cdll.traverseCDLL();
-            cdll.deleteCDLL();
-            cdll.traverseCDLL();
+            // CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
+            // cdll.createNodeInCDLL(1);
+            // cdll.insertInCDLL(0,2);
+            // cdll.insertInCDLL(2,3);
+            // cdll.insertInCDLL(5,4);
+            // //Console.WriteLine(cdll.head.next.value);
+            // cdll.traverseCDLL();
+            // //cdll.reverseTraverseCDLL();
+            // cdll.searchInCDLL(40);
+            // cdll.deleteNodeInDLL(2);
+            // cdll.traverseCDLL();
+            // cdll.deleteCDLL();
+            // cdll.traverseCDLL();
+
+            Stack newStack = new Stack(4);
+            newStack.push(1);
+            newStack.push(2);
+            newStack.push(3);
+            newStack.push(4);
+            newStack.push(5);
+            newStack.push(6);
+            newStack.pop();
+            newStack.peek();
+            newStack.deleteStack();            
         }
 
         //Recursive method to find factorial
