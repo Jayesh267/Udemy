@@ -118,16 +118,30 @@ namespace Udemy
             // cdll.deleteCDLL();
             // cdll.traverseCDLL();
 
-            Stack newStack = new Stack(4);
+            // Stack newStack = new Stack(4);
+            // newStack.push(1);
+            // newStack.push(2);
+            // newStack.push(3);
+            // newStack.push(4);
+            // newStack.push(5);
+            // newStack.push(6);
+            // newStack.pop();
+            // newStack.peek();
+            // newStack.deleteStack();
+
+            StackLinkedList newStack = new StackLinkedList();
             newStack.push(1);
             newStack.push(2);
             newStack.push(3);
-            newStack.push(4);
-            newStack.push(5);
-            newStack.push(6);
-            newStack.pop();
-            newStack.peek();
-            newStack.deleteStack();            
+            bool result = newStack.isEmpty();
+            Console.WriteLine(result);
+            int result1 = newStack.pop();
+            Console.WriteLine(result1);
+            int result2 = newStack.peek();
+            Console.WriteLine(result2);
+            int result3 = newStack.peek();
+            Console.WriteLine(result3);
+            newStack.deleteStack();
         }
 
         //Recursive method to find factorial
