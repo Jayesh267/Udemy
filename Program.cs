@@ -144,12 +144,19 @@ namespace Udemy
             // newStack.deleteStack();
 
             QueueArray newQueue = new QueueArray(3);
-            newQueue.isFull();
-            newQueue.isEmpty();
             newQueue.enQueue(1);
             newQueue.enQueue(2);
             newQueue.enQueue(3);
             newQueue.enQueue(4);
+            int result = newQueue.deQueue();
+            Console.WriteLine(result);
+            int result2= newQueue.deQueue();
+            Console.WriteLine(result2);
+            int result3= newQueue.peek();
+            Console.WriteLine(result3);
+            int result4= newQueue.peek();
+            Console.WriteLine(result4);
+            newQueue.deleteQueue();
         }
 
         //Recursive method to find factorial

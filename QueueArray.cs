@@ -4,13 +4,13 @@ namespace Udemy
     public class QueueArray
     {
         int[] arr;
-        int topOfQueue;
+        int endOfQueue;
         int beginningOfQueue;
 
         public QueueArray(int sizeOfQueue)
         {
             arr = new int[sizeOfQueue];
-            topOfQueue = -1;
+            endOfQueue = -1;
             beginningOfQueue = -1;
             Console.WriteLine("The Queue is successfully created with size of " + sizeOfQueue);
         }
@@ -18,7 +18,7 @@ namespace Udemy
         //Check if the queue is full
         public Boolean isFull()
         {
-            if (topOfQueue == arr.Length - 1)
+            if (endOfQueue == arr.Length - 1)
             {
                 Console.WriteLine("Queue is full");
                 return true;
@@ -55,16 +55,57 @@ namespace Udemy
             else if (isEmpty())
             {
                 beginningOfQueue = 0;
-                topOfQueue++;
-                arr[topOfQueue] = value;
-                Console.WriteLine("Value is added in the queue at position " + topOfQueue);
+                endOfQueue++;
+                arr[endOfQueue] = value;
+                Console.WriteLine("Value is added in the queue at position " + endOfQueue);
             }
             else
             {
-                topOfQueue++;
-                arr[topOfQueue] = value;
-                Console.WriteLine("Value is added in the queue at position " + topOfQueue);
+                endOfQueue++;
+                arr[endOfQueue] = value;
+                Console.WriteLine("Value is added in the queue at position " + endOfQueue);
             }
+        }
+
+        //DeQueue method
+        public int deQueue()
+        {
+            if (isEmpty())
+            {
+                Console.WriteLine("Queue is empty");
+                return -1;
+            }
+            else
+            {
+                int result = arr[beginningOfQueue];
+                beginningOfQueue++;
+                if (beginningOfQueue > endOfQueue)
+                {
+                    beginningOfQueue = endOfQueue = -1;
+                }
+                return result;
+            }
+        }
+
+        //Peek method
+        public int peek()
+        {
+            if (isEmpty())
+            {
+                Console.WriteLine("Queue is empty");
+                return -1;
+            }
+            else
+            {
+                return arr[beginningOfQueue];
+            }
+        }
+
+        //Delete queue
+        public void deleteQueue()
+        {
+            arr = null;
+            Console.WriteLine("Queue is successfully deleted");
         }
     }
 }
