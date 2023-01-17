@@ -129,19 +129,27 @@ namespace Udemy
             // newStack.peek();
             // newStack.deleteStack();
 
-            StackLinkedList newStack = new StackLinkedList();
-            newStack.push(1);
-            newStack.push(2);
-            newStack.push(3);
-            bool result = newStack.isEmpty();
-            Console.WriteLine(result);
-            int result1 = newStack.pop();
-            Console.WriteLine(result1);
-            int result2 = newStack.peek();
-            Console.WriteLine(result2);
-            int result3 = newStack.peek();
-            Console.WriteLine(result3);
-            newStack.deleteStack();
+            // StackLinkedList newStack = new StackLinkedList();
+            // newStack.push(1);
+            // newStack.push(2);
+            // newStack.push(3);
+            // bool result = newStack.isEmpty();
+            // Console.WriteLine(result);
+            // int result1 = newStack.pop();
+            // Console.WriteLine(result1);
+            // int result2 = newStack.peek();
+            // Console.WriteLine(result2);
+            // int result3 = newStack.peek();
+            // Console.WriteLine(result3);
+            // newStack.deleteStack();
+
+            QueueArray newQueue = new QueueArray(3);
+            newQueue.isFull();
+            newQueue.isEmpty();
+            newQueue.enQueue(1);
+            newQueue.enQueue(2);
+            newQueue.enQueue(3);
+            newQueue.enQueue(4);
         }
 
         //Recursive method to find factorial
