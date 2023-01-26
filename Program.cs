@@ -158,15 +158,39 @@ namespace Udemy
             // Console.WriteLine(result4);
             // newQueue.deleteQueue();
 
-            CircularQueue newCQ = new CircularQueue(3);
-            bool result = newCQ.isEmpty();
-            Console.WriteLine(result);
-            bool result1 = newCQ.isFull();
-            Console.WriteLine(result1);
-            newCQ.enQueue(1);
-            newCQ.enQueue(2);
-            newCQ.enQueue(3);
-            newCQ.enQueue(4);
+            // CircularQueue newCQ = new CircularQueue(3);
+            // bool result = newCQ.isEmpty();
+            // Console.WriteLine(result);
+            // bool result1 = newCQ.isFull();
+            // Console.WriteLine(result1);
+            // newCQ.enQueue(1);
+            // newCQ.enQueue(2);
+            // newCQ.enQueue(3);
+            // newCQ.enQueue(4);
+
+            // int result2 = newCQ.deQueue();
+            // Console.WriteLine(result2);
+
+            // newCQ.peek();
+            // newCQ.peek();
+
+            // newCQ.deleteQueue();
+
+            QueueLinkedList list1 = new QueueLinkedList();
+            list1.enQueue(10);
+            list1.enQueue(20);
+            list1.enQueue(30);
+            int deQueueValue = list1.deQueue();
+            Console.WriteLine(deQueueValue);
+            int deQueueValue2 = list1.deQueue();
+            Console.WriteLine(deQueueValue2);
+            int peekValue = list1.peek();
+            Console.WriteLine(peekValue);
+            int peekValue2 = list1.peek();
+            Console.WriteLine(peekValue2);
+            bool eresult = list1.isEmpty();
+            Console.WriteLine(eresult);
+            list1.deleteQueue();
         }
 
         //Recursive method to find factorial

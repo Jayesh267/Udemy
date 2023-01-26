@@ -4,8 +4,8 @@ namespace Udemy
     public class SinglyLinkedList
     {
         public Node head;
-        Node tail;
-        int size;
+        public Node tail;
+        public int size;
         //Create Single node in linked list
         public Node createSinglylinkedList(int nodeValue)
         {

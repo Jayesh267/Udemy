@@ -75,5 +75,56 @@ namespace Udemy
                 Console.WriteLine("Added value at position " + topOfQueue);
             }
         }
+
+        //deQueue method
+        public int deQueue()
+        {
+            if (isEmpty())
+            {
+                Console.WriteLine("Queue is empty!!");
+                return -1;
+            }
+            else
+            {
+                int result = arr[beginningOfQueue];
+                arr[beginningOfQueue] = System.Int32.MinValue;
+                if (beginningOfQueue == topOfQueue)
+                {
+                    beginningOfQueue = topOfQueue = -1;
+                }
+                else if (beginningOfQueue + 1 == size)
+                {
+                    beginningOfQueue = 0;
+                }
+                else
+                {
+                    beginningOfQueue++;
+                }
+                return result;
+            }
+        }
+
+        //Peek method
+        public int peek()
+        {
+            if (isEmpty())
+            {
+                Console.WriteLine("Queue is empty!!");
+                return -1;
+            }
+            else
+            {
+                int result = arr[beginningOfQueue];
+                Console.WriteLine(result);
+                return result;
+            }
+        }
+
+        //Delete queue
+        public void deleteQueue()
+        {
+            arr = null;
+            Console.WriteLine("Circular queue is successfully deleted!!");
+        }
     }
 }
