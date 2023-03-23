@@ -176,21 +176,40 @@ namespace Udemy
 
             // newCQ.deleteQueue();
 
-            QueueLinkedList list1 = new QueueLinkedList();
-            list1.enQueue(10);
-            list1.enQueue(20);
-            list1.enQueue(30);
-            int deQueueValue = list1.deQueue();
-            Console.WriteLine(deQueueValue);
-            int deQueueValue2 = list1.deQueue();
-            Console.WriteLine(deQueueValue2);
-            int peekValue = list1.peek();
-            Console.WriteLine(peekValue);
-            int peekValue2 = list1.peek();
-            Console.WriteLine(peekValue2);
-            bool eresult = list1.isEmpty();
-            Console.WriteLine(eresult);
-            list1.deleteQueue();
+            // QueueLinkedList list1 = new QueueLinkedList();
+            // list1.enQueue(10);
+            // list1.enQueue(20);
+            // list1.enQueue(30);
+            // int deQueueValue = list1.deQueue();
+            // Console.WriteLine(deQueueValue);
+            // int deQueueValue2 = list1.deQueue();
+            // Console.WriteLine(deQueueValue2);
+            // int peekValue = list1.peek();
+            // Console.WriteLine(peekValue);
+            // int peekValue2 = list1.peek();
+            // Console.WriteLine(peekValue2);
+            // bool eresult = list1.isEmpty();
+            // Console.WriteLine(eresult);
+            // list1.deleteQueue();
+
+            TreeNode drinks = new TreeNode("Drinks");
+            TreeNode hotdrinks = new TreeNode("Hot Drinks");
+            TreeNode colddrinks = new TreeNode("Cold Drinks");
+            drinks.addChild(hotdrinks);
+            drinks.addChild(colddrinks);
+            
+            TreeNode tea = new TreeNode("Tea");
+            TreeNode coffee = new TreeNode("Coffee");
+            TreeNode beer = new TreeNode("Beer");
+            TreeNode wine = new TreeNode("Wine");
+
+            hotdrinks.addChild(tea);
+            hotdrinks.addChild(coffee);
+            colddrinks.addChild(beer);
+            colddrinks.addChild(wine);
+
+            Console.WriteLine(drinks.print(1));
+
         }
 
         //Recursive method to find factorial
