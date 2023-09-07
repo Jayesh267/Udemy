@@ -192,24 +192,59 @@ namespace Udemy
             // Console.WriteLine(eresult);
             // list1.deleteQueue();
 
-            TreeNode drinks = new TreeNode("Drinks");
-            TreeNode hotdrinks = new TreeNode("Hot Drinks");
-            TreeNode colddrinks = new TreeNode("Cold Drinks");
-            drinks.addChild(hotdrinks);
-            drinks.addChild(colddrinks);
+            // TreeNode drinks = new TreeNode("Drinks");
+            // TreeNode hotdrinks = new TreeNode("Hot Drinks");
+            // TreeNode colddrinks = new TreeNode("Cold Drinks");
+            // drinks.addChild(hotdrinks);
+            // drinks.addChild(colddrinks);
             
-            TreeNode tea = new TreeNode("Tea");
-            TreeNode coffee = new TreeNode("Coffee");
-            TreeNode beer = new TreeNode("Beer");
-            TreeNode wine = new TreeNode("Wine");
+            // TreeNode tea = new TreeNode("Tea");
+            // TreeNode coffee = new TreeNode("Coffee");
+            // TreeNode beer = new TreeNode("Beer");
+            // TreeNode wine = new TreeNode("Wine");
 
-            hotdrinks.addChild(tea);
-            hotdrinks.addChild(coffee);
-            colddrinks.addChild(beer);
-            colddrinks.addChild(wine);
+            // hotdrinks.addChild(tea);
+            // hotdrinks.addChild(coffee);
+            // colddrinks.addChild(beer);
+            // colddrinks.addChild(wine);
 
-            Console.WriteLine(drinks.print(1));
+            // Console.WriteLine(drinks.print(1));
 
+            BinaryTreeLinkedList binaryTree = new BinaryTreeLinkedList();
+            BinaryNode N1 = new BinaryNode();
+            N1.value = "N1";
+            BinaryNode N2 = new BinaryNode();
+            N2.value = "N2";
+            BinaryNode N3 = new BinaryNode();
+            N3.value = "N3";
+            BinaryNode N4 = new BinaryNode();
+            N4.value = "N4";
+            BinaryNode N5 = new BinaryNode();
+            N5.value = "N5";
+            BinaryNode N6 = new BinaryNode();
+            N6.value = "N6";
+            BinaryNode N7 = new BinaryNode();
+            N7.value = "N7";
+            BinaryNode N8 = new BinaryNode();
+            N8.value = "N8";
+            BinaryNode N9 = new BinaryNode();
+            N9.value = "N9";
+            
+            N1.left = N2;
+            N1.right = N3;
+            N2.left = N4;
+            N2.right = N5;
+            N3.left = N6;
+            N3.right = N7;
+            N4.left = N8;
+            N4.right = N9;
+            binaryTree.root = N1;
+
+            binaryTree.searchBinaryTree("N8");
+            binaryTree.insertInBinaryTree("N10");
+            //binaryTree.postOrder(N1);
+            Console.WriteLine(binaryTree.getDeepestNode().value);
+            binaryTree.deleteBinaryTree();
         }
 
         //Recursive method to find factorial
