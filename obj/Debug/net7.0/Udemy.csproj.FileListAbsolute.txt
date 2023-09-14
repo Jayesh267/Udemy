@@ -3,7 +3,6 @@ C:\Users\JMhatre\Udemy\bin\Debug\net7.0\Udemy.deps.json
 C:\Users\JMhatre\Udemy\bin\Debug\net7.0\Udemy.runtimeconfig.json
 C:\Users\JMhatre\Udemy\bin\Debug\net7.0\Udemy.dll
 C:\Users\JMhatre\Udemy\bin\Debug\net7.0\Udemy.pdb
-C:\Users\JMhatre\Udemy\obj\Debug\net7.0\Udemy.csproj.AssemblyReference.cache
 C:\Users\JMhatre\Udemy\obj\Debug\net7.0\Udemy.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\JMhatre\Udemy\obj\Debug\net7.0\Udemy.AssemblyInfoInputs.cache
 C:\Users\JMhatre\Udemy\obj\Debug\net7.0\Udemy.AssemblyInfo.cs

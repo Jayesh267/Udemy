@@ -6,6 +6,7 @@ namespace Udemy
     {
         public static void Main(string[] args)
         {
+            /*
             // Program p1 = new Program();
             // var factorialResult = p1.factorial(0);
             // Console.WriteLine(factorialResult);
@@ -208,8 +209,8 @@ namespace Udemy
             // colddrinks.addChild(beer);
             // colddrinks.addChild(wine);
 
-            // Console.WriteLine(drinks.print(1));
-
+            // Console.WriteLine(drinks.print(1));*/
+            /*
             BinaryTreeLinkedList binaryTree = new BinaryTreeLinkedList();
             BinaryNode N1 = new BinaryNode();
             N1.value = "N1";
@@ -244,7 +245,32 @@ namespace Udemy
             binaryTree.insertInBinaryTree("N10");
             //binaryTree.postOrder(N1);
             Console.WriteLine(binaryTree.getDeepestNode().value);
-            binaryTree.deleteBinaryTree();
+            binaryTree.deleteBinaryTree();*/
+
+            BinaryTreeArray binaryTreeArray = new BinaryTreeArray(9);
+            binaryTreeArray.insertInBinaryTree("N1");
+            binaryTreeArray.insertInBinaryTree("N2");
+            binaryTreeArray.insertInBinaryTree("N3");
+            binaryTreeArray.insertInBinaryTree("N4");
+            binaryTreeArray.insertInBinaryTree("N5");
+            binaryTreeArray.insertInBinaryTree("N6");
+            binaryTreeArray.insertInBinaryTree("N7");
+            binaryTreeArray.insertInBinaryTree("N8");
+            binaryTreeArray.insertInBinaryTree("N9");
+            
+            binaryTreeArray.preOrder(1);
+            Console.WriteLine();
+            binaryTreeArray.inOrder(1);
+            Console.WriteLine();
+            binaryTreeArray.postOrder(1);            
+            Console.WriteLine();
+            binaryTreeArray.searchTree("N7");
+            Console.WriteLine();
+            binaryTreeArray.delete("N5");
+            Console.WriteLine();
+            binaryTreeArray.levelOrder();
+            Console.WriteLine();
+            binaryTreeArray.deleteTree();
         }
 
         //Recursive method to find factorial

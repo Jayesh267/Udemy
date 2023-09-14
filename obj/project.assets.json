@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\demo\\.nuget\\packages\\": {}
+    "C:\\Users\\JMhatre\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Udemy\\Udemy\\Udemy.csproj",
+      "projectUniqueName": "C:\\Users\\JMhatre\\Udemy\\Udemy.csproj",
       "projectName": "Udemy",
-      "projectPath": "C:\\Udemy\\Udemy\\Udemy.csproj",
-      "packagesPath": "C:\\Users\\demo\\.nuget\\packages\\",
-      "outputPath": "C:\\Udemy\\Udemy\\obj\\",
+      "projectPath": "C:\\Users\\JMhatre\\Udemy\\Udemy.csproj",
+      "packagesPath": "C:\\Users\\JMhatre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JMhatre\\Udemy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\demo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JMhatre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
